@@ -2,7 +2,7 @@ package codingpractice.search;
 
 import codingpractice.datastructure.Node;
 
-public class BfsPostorderTraversalRecursive implements DisplayData{
+public class BfsPostorderTreeTraversalRecursive implements DisplayData{
 
 	@Override
 	public void displayData(Node node) {
