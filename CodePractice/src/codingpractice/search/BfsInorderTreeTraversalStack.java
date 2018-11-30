@@ -8,30 +8,27 @@ public class BfsInorderTreeTraversalStack implements DisplayData {
 
 	@Override
 	public void displayData(Node node) {
-		if ( node == null )
+		if(node == null)
 			return;
 		
 		Stack<Node> stack = new Stack<>();
 		Node currentNode = node;
+		Node prevNode = null;
+		stack.push(currentNode);
 		
-		while(!stack.isEmpty() || currentNode != null) {
-			while(currentNode != null) {
-				stack.push(currentNode);
-				if(currentNode.getChildren().size() > 0)
-					currentNode = currentNode.getChildren().get(0);
-				else 
-					currentNode = null;
-			}
-			
-			// currentNode is null, stack is filled up		
+		while(!stack.isEmpty()) {
 			currentNode = stack.pop();
-			System.out.print(currentNode.getValue() + " ");
-			
-			// got to right node
-			if(currentNode.getChildren().size()> 1)
-				currentNode = currentNode.getChildren().get(1);
-			else
-				currentNode = null;
+			// check if currentNode is parent left node
+			if(currentNode.getChildren().size() > 1 && currentNode.getChildren().get(0) == prevNode)
+				System.out.print(currentNode.getValue() + " ");
+			else if(currentNode.getChildren().size() > 1){
+				stack.push(currentNode.getChildren().get(1));
+				stack.push(currentNode);
+				stack.push(currentNode.getChildren().get(0));
+			} else {
+				System.out.print(currentNode.getValue() + " ");
+			}
+			prevNode = currentNode;
 		}
 	}
 }

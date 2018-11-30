@@ -17,14 +17,13 @@ public class Main {
 		Node root = bTree.generateStructureWithRandomData();
 		
 		TraversalTreeRecursive(root);
+		TraversalTreeStack(root);
+	}
+
+	private static void TraversalTreeStack(Node root) {
 		System.out.println("\n== Pre Order ==");
 		
 		DisplayData  treeDisplay = new BfsPreorderTreeTraversalStack();
-		treeDisplay.displayData(root);
-		
-		System.out.println("\n== In Order ==");
-		
-		treeDisplay = new BfsInorderTreeTraversalStack();
 		treeDisplay.displayData(root);
 		
 		System.out.println("\n== Post Order ==");
@@ -32,7 +31,10 @@ public class Main {
 		treeDisplay = new BfsPostorderTreeTraversalStack();
 		treeDisplay.displayData(root);
 		
-
+		System.out.println("\n== In Order ==");
+		
+		treeDisplay = new BfsInorderTreeTraversalStack();
+		treeDisplay.displayData(root);
 	}
 
 	private static void TraversalTreeRecursive(Node root) {

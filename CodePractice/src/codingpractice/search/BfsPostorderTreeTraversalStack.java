@@ -8,33 +8,27 @@ public class BfsPostorderTreeTraversalStack implements DisplayData {
 
 	@Override
 	public void displayData(Node node) {
+		if(node == null)
+			return;
+		
 		Stack<Node> stack = new Stack<>();
 		Node currentNode = node;
+		Node prevNode = null;
+		stack.push(currentNode);
 		
-		while(!stack.isEmpty() || currentNode != null) {
-			while(currentNode != null) {
-				stack.push(currentNode);
-				if(currentNode.getChildren().size() > 0)
-					currentNode = currentNode.getChildren().get(0);
-				else
-					currentNode = null;
-			}
-			
-			// currentNode = null, stack filled with left tree nodes
+		while(!stack.isEmpty()) {
 			currentNode = stack.pop();
-			
-			// evaluate the popped node
-			if(currentNode.getChildren().size() > 1) {
-				// has right node
-				Node rightNode = currentNode.getChildren().get(1);
-				currentNode.getChildren().clear();
-				stack.push(currentNode);
-				currentNode = rightNode;
-			} else {
-				// no children, just display
+			// check if currentNode is parent right node
+			if(currentNode.getChildren().size() > 1 && currentNode.getChildren().get(1) == prevNode)
 				System.out.print(currentNode.getValue() + " ");
-				currentNode = null;
+			else if(currentNode.getChildren().size() > 1){
+				stack.push(currentNode);
+				stack.push(currentNode.getChildren().get(1));
+				stack.push(currentNode.getChildren().get(0));
+			} else {
+				System.out.print(currentNode.getValue() + " ");
 			}
+			prevNode = currentNode;
 		}
 	}
 
