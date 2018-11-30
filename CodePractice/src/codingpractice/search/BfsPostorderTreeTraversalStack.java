@@ -4,13 +4,10 @@ import java.util.Stack;
 
 import codingpractice.datastructure.Node;
 
-public class BfsInorderTreeTraversalStack implements DisplayData {
+public class BfsPostorderTreeTraversalStack implements DisplayData {
 
 	@Override
 	public void displayData(Node node) {
-		if ( node == null )
-			return;
-		
 		Stack<Node> stack = new Stack<>();
 		Node currentNode = node;
 		
@@ -19,19 +16,26 @@ public class BfsInorderTreeTraversalStack implements DisplayData {
 				stack.push(currentNode);
 				if(currentNode.getChildren().size() > 0)
 					currentNode = currentNode.getChildren().get(0);
-				else 
+				else
 					currentNode = null;
 			}
 			
-			// currentNode is null, stack is filled up		
+			// currentNode = null, stack filled with left tree nodes
 			currentNode = stack.pop();
-			System.out.print(currentNode.getValue() + " ");
 			
-			// got to right node
-			if(currentNode.getChildren().size()> 1)
-				currentNode = currentNode.getChildren().get(1);
-			else
+			// evaluate the popped node
+			if(currentNode.getChildren().size() > 1) {
+				// has right node
+				Node rightNode = currentNode.getChildren().get(1);
+				currentNode.getChildren().clear();
+				stack.push(currentNode);
+				currentNode = rightNode;
+			} else {
+				// no children, just display
+				System.out.print(currentNode.getValue() + " ");
 				currentNode = null;
+			}
 		}
 	}
+
 }
