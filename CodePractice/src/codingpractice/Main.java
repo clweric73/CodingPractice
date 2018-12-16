@@ -1,5 +1,7 @@
 package codingpractice;
 
+import java.util.Arrays;
+
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.search.BfsInorderTreeTraversalRecursive;
@@ -9,15 +11,21 @@ import codingpractice.search.BfsPostorderTreeTraversalStack;
 import codingpractice.search.BfsPreorderTreeTraversalRecursive;
 import codingpractice.search.BfsPreorderTreeTraversalStack;
 import codingpractice.search.DisplayData;
+import codingpractice.sort.QuickSort;
+import codingpractice.sort.Sort;
 
 public class Main {
 
 	public static void main(String[] args) {
-		BinaryTree bTree = new BinaryTree();
-		Node root = bTree.generateStructureWithRandomData();
-		
-		TraversalTreeRecursive(root);
-		TraversalTreeStack(root);
+//		BinaryTree bTree = new BinaryTree();
+//		Node root = bTree.generateStructureWithRandomData();
+//		
+//		TraversalTreeRecursive(root);
+//		TraversalTreeStack(root);
+		int[] a = new int[]{3,7,2,1,6,9,3,3};
+		Sort s = new QuickSort();
+		s.sortArray(a);
+		System.out.println(Arrays.toString(a));
 	}
 
 	private static void TraversalTreeStack(Node root) {
