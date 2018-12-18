@@ -1,5 +1,7 @@
 package codingpractice.search;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 import codingpractice.datastructure.Node;
@@ -12,24 +14,21 @@ public class BfsPostorderTreeTraversalStack implements DisplayData {
 			return;
 		
 		Stack<Node> stack = new Stack<>();
+		Set<Node> visited = new HashSet<Node>();
 		Node currentNode = node;
-		Node prevNode = null;
 		stack.push(currentNode);
 		
 		while(!stack.isEmpty()) {
 			currentNode = stack.pop();
-			// check if currentNode is parent right node
-			if(currentNode.getChildren().size() > 1 && currentNode.getChildren().get(1) == prevNode)
+			if(currentNode.getChildren().size() == 0 
+					|| (visited.contains(currentNode.getChildren().get(0)) && visited.contains(currentNode.getChildren().get(1)))) {
 				System.out.print(currentNode.getValue() + " ");
-			else if(currentNode.getChildren().size() > 1){
+				visited.add(currentNode);
+			} else {
 				stack.push(currentNode);
 				stack.push(currentNode.getChildren().get(1));
 				stack.push(currentNode.getChildren().get(0));
-			} else {
-				System.out.print(currentNode.getValue() + " ");
 			}
-			prevNode = currentNode;
 		}
 	}
-
 }

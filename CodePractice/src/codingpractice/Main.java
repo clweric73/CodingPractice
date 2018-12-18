@@ -18,13 +18,13 @@ import codingpractice.sort.Sort;
 public class Main {
 
 	public static void main(String[] args) {
-//		BinaryTree bTree = new BinaryTree();
-//		Node root = bTree.generateStructureWithRandomData();
-//		
-//		TraversalTreeRecursive(root);
-//		TraversalTreeStack(root);
-		MakeChange m = new MakeChange();
-		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
+		BinaryTree bTree = new BinaryTree();
+		Node root = bTree.generateStructureWithRandomData();
+		
+		TraversalTreeRecursive(root);
+		TraversalTreeStack(root);
+//		MakeChange m = new MakeChange();
+//		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
 //		int[] a = new int[]{3,7,2,1,6,9,3,3};
 //		Sort s = new QuickSort();
 //		s.sortArray(a);
