@@ -1,5 +1,7 @@
 package codingpractice;
 
+import java.util.Arrays;
+
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.MakeChange;
@@ -10,6 +12,8 @@ import codingpractice.search.BfsPostorderTreeTraversalStack;
 import codingpractice.search.BfsPreorderTreeTraversalRecursive;
 import codingpractice.search.BfsPreorderTreeTraversalStack;
 import codingpractice.search.DisplayData;
+import codingpractice.sort.QuickSort;
+import codingpractice.sort.Sort;
 
 public class Main {
 
@@ -21,6 +25,10 @@ public class Main {
 //		TraversalTreeStack(root);
 		MakeChange m = new MakeChange();
 		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
+//		int[] a = new int[]{3,7,2,1,6,9,3,3};
+//		Sort s = new QuickSort();
+//		s.sortArray(a);
+//		System.out.println(Arrays.toString(a));
 	}
 
 	private static void TraversalTreeStack(Node root) {
