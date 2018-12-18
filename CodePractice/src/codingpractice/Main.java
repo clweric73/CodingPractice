@@ -5,6 +5,7 @@ import java.util.Arrays;
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.MakeChange;
+import codingpractice.dynamicprogramming.ShortestPathToFindGold;
 import codingpractice.search.BfsInorderTreeTraversalRecursive;
 import codingpractice.search.BfsInorderTreeTraversalStack;
 import codingpractice.search.BfsPostorderTreeTraversalRecursive;
@@ -29,6 +30,9 @@ public class Main {
 //		Sort s = new QuickSort();
 //		s.sortArray(a);
 //		System.out.println(Arrays.toString(a));
+		int[][] grid = {{1,1,0,0,1,0}, {1,1,0,0,1,1}, {0,1,1,9,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}};
+		ShortestPathToFindGold finder = new ShortestPathToFindGold();
+		System.out.println(finder.shortestPathToFindGold(grid, 0, 0));
 	}
 
 	private static void TraversalTreeStack(Node root) {
