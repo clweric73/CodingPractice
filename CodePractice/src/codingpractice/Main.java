@@ -2,6 +2,7 @@ package codingpractice;
 
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
+import codingpractice.dynamicprogramming.MakeChange;
 import codingpractice.search.BfsInorderTreeTraversalRecursive;
 import codingpractice.search.BfsInorderTreeTraversalStack;
 import codingpractice.search.BfsPostorderTreeTraversalRecursive;
@@ -13,11 +14,13 @@ import codingpractice.search.DisplayData;
 public class Main {
 
 	public static void main(String[] args) {
-		BinaryTree bTree = new BinaryTree();
-		Node root = bTree.generateStructureWithRandomData();
-		
-		TraversalTreeRecursive(root);
-		TraversalTreeStack(root);
+//		BinaryTree bTree = new BinaryTree();
+//		Node root = bTree.generateStructureWithRandomData();
+//		
+//		TraversalTreeRecursive(root);
+//		TraversalTreeStack(root);
+		MakeChange m = new MakeChange();
+		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
 	}
 
 	private static void TraversalTreeStack(Node root) {
