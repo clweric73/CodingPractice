@@ -13,6 +13,7 @@ public class ShortestPathToFindGold {
 		if(grid[row][col] == WATER_VALUE)
 			return -1;
 		
+		// We are here when value is LAND_VALUE
 		int retFromDown = 0;
 		int retFromRight = 0;
 		retFromDown = shortestPathToFindGold(grid, row + 1, col);
