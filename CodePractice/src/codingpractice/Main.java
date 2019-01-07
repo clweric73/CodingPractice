@@ -3,6 +3,9 @@ package codingpractice;
 import java.util.Arrays;
 
 import codingpractice.algorithm.CaesarCipher;
+import codingpractice.algorithm.FibonacciNumber;
+import codingpractice.algorithm.FibonacciNumberIter;
+import codingpractice.algorithm.FibonacciNumberRecur;
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.MakeChange;
@@ -37,7 +40,14 @@ public class Main {
 		
 		String cipher = "bcdefghijklmnopqrstuvwxyza";
 		CaesarCipher decryptEngin = new CaesarCipher();
-		System.out.println(decryptEngin.decrypt(cipher, -1));
+		System.out.println(decryptEngin.decrypt(cipher, -27));
+		
+		int term = 13;
+		FibonacciNumber fib = new FibonacciNumberIter();
+		System.out.println("Fib term " + term + " = " + fib.findFib(term));
+		
+		fib = new FibonacciNumberRecur();
+		System.out.println("Fib term " + term + " = " + fib.findFib(term));
 	}
 
 	private static void TraversalTreeStack(Node root) {
