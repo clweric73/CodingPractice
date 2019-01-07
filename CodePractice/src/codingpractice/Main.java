@@ -2,6 +2,7 @@ package codingpractice;
 
 import java.util.Arrays;
 
+import codingpractice.algorithm.CaesarCipher;
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.MakeChange;
@@ -18,21 +19,25 @@ import codingpractice.sort.Sort;
 
 public class Main {
 
-	public static void main(String[] args) {
-		BinaryTree bTree = new BinaryTree();
-		Node root = bTree.generateStructureWithRandomData();
-		
-		TraversalTreeRecursive(root);
-		TraversalTreeStack(root);
+	public static void main(String[] args) throws Exception {
+//		BinaryTree bTree = new BinaryTree();
+//		Node root = bTree.generateStructureWithRandomData();
+//		
+//		TraversalTreeRecursive(root);
+//		TraversalTreeStack(root);
 //		MakeChange m = new MakeChange();
 //		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
 //		int[] a = new int[]{3,7,2,1,6,9,3,3};
 //		Sort s = new QuickSort();
 //		s.sortArray(a);
 //		System.out.println(Arrays.toString(a));
-		int[][] grid = {{1,1,0,0,1,0}, {1,1,0,0,1,1}, {0,1,1,9,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}};
-		ShortestPathToFindGold finder = new ShortestPathToFindGold();
-		System.out.println(finder.shortestPathToFindGold(grid, 0, 0));
+//		int[][] grid = {{1,1,0,0,1,0}, {1,1,0,0,1,1}, {0,1,1,9,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}};
+//		ShortestPathToFindGold finder = new ShortestPathToFindGold();
+//		System.out.println(finder.shortestPathToFindGold(grid, 0, 0));
+		
+		String cipher = "bcdefghijklmnopqrstuvwxyza";
+		CaesarCipher decryptEngin = new CaesarCipher();
+		System.out.println(decryptEngin.decrypt(cipher, -1));
 	}
 
 	private static void TraversalTreeStack(Node root) {
