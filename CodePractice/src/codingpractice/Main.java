@@ -9,6 +9,7 @@ import codingpractice.algorithm.FibonacciNumberIter;
 import codingpractice.algorithm.FibonacciNumberRecur;
 import codingpractice.algorithm.KaratsubaMultiplication;
 import codingpractice.datastructure.BinaryTree;
+import codingpractice.datastructure.MultiplyMatrix;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.AllPossibleCharactersFromNumber;
 import codingpractice.dynamicprogramming.MakeChange;
@@ -82,7 +83,10 @@ public class Main {
 //		BigInteger num2 = new BigInteger("4321");
 //		System.out.println(mult.karatsubaMult(num1, num2));
 		
-		
+		int[][] arrayA = new int[][] {{3,2},{7,8}};
+		int[][] arrayB = new int[][] {{1,3},{2,6}};
+		MultiplyMatrix matrixCalc = new MultiplyMatrix();
+		System.out.println(Arrays.deepToString(matrixCalc.multiplyMatrix(arrayA, arrayB)));
 	}
 
 	private static void TraversalTreeStack(Node root) {
