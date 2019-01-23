@@ -1,11 +1,13 @@
 package codingpractice;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 
 import codingpractice.algorithm.CaesarCipher;
 import codingpractice.algorithm.FibonacciNumber;
 import codingpractice.algorithm.FibonacciNumberIter;
 import codingpractice.algorithm.FibonacciNumberRecur;
+import codingpractice.algorithm.KaratsubaMultiplication;
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.AllPossibleCharactersFromNumber;
@@ -20,6 +22,7 @@ import codingpractice.search.BfsPreorderTreeTraversalRecursive;
 import codingpractice.search.BfsPreorderTreeTraversalStack;
 import codingpractice.search.BinarySearch;
 import codingpractice.search.DisplayData;
+import codingpractice.sort.MergeSort;
 import codingpractice.sort.QuickSort;
 import codingpractice.sort.Sort;
 
@@ -33,10 +36,13 @@ public class Main {
 //		TraversalTreeStack(root);
 //		MakeChange m = new MakeChange();
 //		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
-//		int[] a = new int[]{3,7,2,1,6,9,3,3};
-//		Sort s = new QuickSort();
-//		s.sortArray(a);
-//		System.out.println(Arrays.toString(a));
+		
+		int[] a = new int[]{3,7,2,1,6,9,3,3,9};
+		//Sort s = new QuickSort();
+		Sort s = new MergeSort();
+		int[] b = s.sortArray(a);
+		System.out.println(Arrays.toString(b));
+		
 //		int[][] grid = {{1,1,0,0,1,0}, {1,1,0,0,1,1}, {0,1,1,9,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}};
 //		ShortestPathToFindGold finder = new ShortestPathToFindGold();
 //		System.out.println(finder.shortestPathToFindGold(grid, 0, 0));
@@ -65,9 +71,18 @@ public class Main {
 //		System.out.println("======================");
 //		perm.showPermutationNoRepeat(chars, 0, "");
 		
-		int[] nums = new int[] {1,4,5,10,20,100,200};
-		BinarySearch search = new BinarySearch();
-		System.out.println(search.isElementFound(nums, 103));
+//		int[] nums = new int[] {1,4,5,10,20,100,200};
+//		BinarySearch search = new BinarySearch();
+//		System.out.println(search.isElementFound(nums, 103));
+		
+		//BigInteger num1 = new BigInteger("3141592653589793238462643383279502884197169399375105820974944592");
+		//BigInteger num2 = new BigInteger("2718281828459045235360287471352662497757247093699959574966967627");
+//		KaratsubaMultiplication mult = new KaratsubaMultiplication();
+//		BigInteger num1 = new BigInteger("5678");
+//		BigInteger num2 = new BigInteger("4321");
+//		System.out.println(mult.karatsubaMult(num1, num2));
+		
+		
 	}
 
 	private static void TraversalTreeStack(Node root) {
