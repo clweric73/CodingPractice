@@ -7,9 +7,10 @@ import codingpractice.algorithm.CaesarCipher;
 import codingpractice.algorithm.FibonacciNumber;
 import codingpractice.algorithm.FibonacciNumberIter;
 import codingpractice.algorithm.FibonacciNumberRecur;
-import codingpractice.algorithm.KaratsubaMultiplication;
+import codingpractice.coursera.dividenconquer.KaratsubaMultiplication;
+import codingpractice.coursera.dividenconquer.MultiplyMatrix;
+import codingpractice.coursera.dividenconquer.MultiplyMatrixRecur;
 import codingpractice.datastructure.BinaryTree;
-import codingpractice.datastructure.MultiplyMatrix;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.AllPossibleCharactersFromNumber;
 import codingpractice.dynamicprogramming.MakeChange;
@@ -38,11 +39,11 @@ public class Main {
 //		MakeChange m = new MakeChange();
 //		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
 		
-		int[] a = new int[]{3,7,2,1,6,9,3,3,9};
-		//Sort s = new QuickSort();
-		Sort s = new MergeSort();
-		int[] b = s.sortArray(a);
-		System.out.println(Arrays.toString(b));
+//		int[] a = new int[]{3,7,2,1,6,9,3,3,9};
+//		//Sort s = new QuickSort();
+//		Sort s = new MergeSort();
+//		int[] b = s.sortArray(a);
+//		System.out.println(Arrays.toString(b));
 		
 //		int[][] grid = {{1,1,0,0,1,0}, {1,1,0,0,1,1}, {0,1,1,9,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}};
 //		ShortestPathToFindGold finder = new ShortestPathToFindGold();
@@ -83,12 +84,33 @@ public class Main {
 //		BigInteger num2 = new BigInteger("4321");
 //		System.out.println(mult.karatsubaMult(num1, num2));
 		
-		int[][] arrayA = new int[][] {{3,2},{7,8}};
-		int[][] arrayB = new int[][] {{1,3},{2,6}};
+		int[][] arrayA = new int[][] {{3,2,3,2},{7,8,7,8},{3,2,3,2},{7,8,7,8}};
+		int[][] arrayB = new int[][] {{1,3,1,3},{2,6,2,6},{1,3,1,3},{2,6,2,6}};
 		MultiplyMatrix matrixCalc = new MultiplyMatrix();
 		System.out.println(Arrays.deepToString(matrixCalc.multiplyMatrix(arrayA, arrayB)));
+		
+		MultiplyMatrixRecur matrixCalcR = new MultiplyMatrixRecur();
+		System.out.println(Arrays.deepToString(matrixCalcR.multiplyMatrix(arrayA, arrayB)));
+		
+//		// Testing if array can be modified in the method
+//		int[][] matrix2D = new int[][] {{3,2},{7,8}};
+//		int[] array = new int[] {2,3,4,5};
+//		int a = 8;
+//		System.out.println(Arrays.toString(array));
+//		System.out.println(Arrays.deepToString(matrix2D));
+//		System.out.println(a);
+//		modifyArray(matrix2D, array, a);
+//		System.out.println(Arrays.toString(array));
+//		System.out.println(Arrays.deepToString(matrix2D));
+//		System.out.println(a);
 	}
 
+	private static void modifyArray(int[][] matrix2d, int[] array, int a) {
+		matrix2d[0][0] = 100;
+		array[0] = 100;
+		a = 100;
+	}
+	
 	private static void TraversalTreeStack(Node root) {
 		System.out.println("\n== Pre Order ==");
 		

@@ -1,4 +1,4 @@
-package codingpractice.datastructure;
+package codingpractice.coursera.dividenconquer;
 
 public class MultiplyMatrix {
 	public int[][] multiplyMatrix(int[][] a, int[][] b){

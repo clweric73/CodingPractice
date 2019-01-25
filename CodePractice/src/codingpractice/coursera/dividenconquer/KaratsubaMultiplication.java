@@ -1,4 +1,4 @@
-package codingpractice.algorithm;
+package codingpractice.coursera.dividenconquer;
 
 import java.math.BigInteger;
 
