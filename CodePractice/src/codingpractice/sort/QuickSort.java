@@ -17,17 +17,25 @@ public class QuickSort implements Sort {
 		int right = endIndex;
 		
 		while(left <= right){
-			if(origArray[left] >= pivotValue && origArray[right] <= pivotValue){
+			if(origArray[left] <= pivotValue) {
+				left++;
+			}
+			else if (origArray[right] > pivotValue) {
+				right--;
+			}
+			else {
 				swap(origArray, left, right);
 				left++;
 				right--;
-			} else if (origArray[left] < pivotValue)
-				left++;
-			else if (origArray[right] > pivotValue)
-				right--;	
+			}
 		}
+		
+		// point to the last small sub array;
+		left--;
+		swap(origArray, startIndex, left);
+		
 		quickSort(origArray, startIndex, left - 1);
-		quickSort(origArray, left, endIndex);
+		quickSort(origArray, left + 1, endIndex);
 	}
 	
 	private void swap(int[] array, int firstIndex, int secondIndex){
