@@ -6,9 +6,11 @@ import codingpractice.algorithm.CaesarCipher;
 import codingpractice.algorithm.FibonacciNumber;
 import codingpractice.algorithm.FibonacciNumberIter;
 import codingpractice.algorithm.FibonacciNumberRecur;
+import codingpractice.datastructure.BNode;
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.AllPossibleCharactersFromNumber;
+import codingpractice.dynamicprogramming.BiggestSumFromPath;
 import codingpractice.dynamicprogramming.MakeChange;
 import codingpractice.dynamicprogramming.Permutations;
 import codingpractice.dynamicprogramming.ShortestPathToFindGold;
@@ -65,9 +67,20 @@ public class Main {
 //		System.out.println("======================");
 //		perm.showPermutationNoRepeat(chars, 0, "");
 		
-		int[] nums = new int[] {1,4,5,10,20,100,200};
-		BinarySearch search = new BinarySearch();
-		System.out.println(search.isElementFound(nums, 103));
+//		int[] nums = new int[] {1,4,5,10,20,100,200};
+//		BinarySearch search = new BinarySearch();
+//		System.out.println(search.isElementFound(nums, 103));
+		
+		BNode n = new BNode(3, 
+				new BNode(2, 
+						new BNode(6,null,null), 
+						new BNode(20, null, null)),
+				new BNode(10, 
+						new BNode(1,null,null), 
+						new BNode(30, null, null)));
+		
+		BiggestSumFromPath maxFinder = new BiggestSumFromPath();
+		System.out.println(maxFinder.findBiggestSumFromBTree(n, 0));
 	}
 
 	private static void TraversalTreeStack(Node root) {
