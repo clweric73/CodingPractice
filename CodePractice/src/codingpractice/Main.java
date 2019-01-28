@@ -1,7 +1,13 @@
 package codingpractice;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import codingpractice.algorithm.CaesarCipher;
 import codingpractice.algorithm.FibonacciNumber;
@@ -10,9 +16,11 @@ import codingpractice.algorithm.FibonacciNumberRecur;
 import codingpractice.coursera.dividenconquer.KaratsubaMultiplication;
 import codingpractice.coursera.dividenconquer.MultiplyMatrix;
 import codingpractice.coursera.dividenconquer.MultiplyMatrixRecur;
+import codingpractice.coursera.dividenconquer.NumberOfInversionCount;
 import codingpractice.datastructure.BinaryTree;
 import codingpractice.datastructure.Node;
 import codingpractice.dynamicprogramming.AllPossibleCharactersFromNumber;
+import codingpractice.dynamicprogramming.BiggestSumFromPath;
 import codingpractice.dynamicprogramming.MakeChange;
 import codingpractice.dynamicprogramming.Permutations;
 import codingpractice.dynamicprogramming.ShortestPathToFindGold;
@@ -76,12 +84,11 @@ public class Main {
 //		int[] nums = new int[] {1,4,5,10,20,100,200};
 //		BinarySearch search = new BinarySearch();
 //		System.out.println(search.isElementFound(nums, 103));
-		
-		//BigInteger num1 = new BigInteger("3141592653589793238462643383279502884197169399375105820974944592");
-		//BigInteger num2 = new BigInteger("2718281828459045235360287471352662497757247093699959574966967627");
+//		BigInteger num1 = new BigInteger("3141592653589793238462643383279502884197169399375105820974944592");
+//		BigInteger num2 = new BigInteger("2718281828459045235360287471352662497757247093699959574966967627");
 //		KaratsubaMultiplication mult = new KaratsubaMultiplication();
-//		BigInteger num1 = new BigInteger("5678");
-//		BigInteger num2 = new BigInteger("4321");
+////		BigInteger num1 = new BigInteger("5678");
+////		BigInteger num2 = new BigInteger("4321");
 //		System.out.println(mult.karatsubaMult(num1, num2));
 		
 //		int[][] arrayA = new int[][] {{3,2,3,2},{7,8,7,8},{3,2,3,2},{7,8,7,8}};
@@ -103,8 +110,39 @@ public class Main {
 //		System.out.println(Arrays.toString(array));
 //		System.out.println(Arrays.deepToString(matrix2D));
 //		System.out.println(a);
+		
+		int[] a = readIntegersFromFile("IntegerArray.txt");
+		//Sort s = new QuickSort();
+		NumberOfInversionCount inv = new NumberOfInversionCount();
+		int[] b = inv.countInversion(a);
+		//System.out.println(Arrays.toString(b));
+		System.out.println(inv.getInversionCount());
 	}
 
+	private static int[] readIntegersFromFile(String fileName){
+		List<Integer> nums = new ArrayList<Integer>();
+		
+		InputStream fin = Main.class.getClassLoader().getResourceAsStream("codingpractice/coursera/dividenconquer/IntegerArray.txt");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(fin));
+		
+		String line;
+		try{
+			while((line = reader.readLine()) != null){
+				nums.add(Integer.parseInt(line));
+			}
+		} catch (IOException ex){
+			System.out.println("Error reading file.");
+		}
+		
+		
+		int[] ret = new int[nums.size()];
+		
+		for(int i = 0; i < nums.size(); i++)
+			ret[i] = nums.get(i);
+		
+		return ret;
+	}
+	
 	private static void modifyArray(int[][] matrix2d, int[] array, int a) {
 		matrix2d[0][0] = 100;
 		array[0] = 100;
