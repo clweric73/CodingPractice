@@ -39,11 +39,11 @@ public class Main {
 //		MakeChange m = new MakeChange();
 //		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
 		
-//		int[] a = new int[]{3,7,2,1,6,9,3,3,9};
-//		//Sort s = new QuickSort();
-//		Sort s = new MergeSort();
-//		int[] b = s.sortArray(a);
-//		System.out.println(Arrays.toString(b));
+		int[] a = new int[]{3,7,2,1,6,9,3,3,9};
+		Sort s = new QuickSort();
+		//Sort s = new MergeSort();
+		int[] b = s.sortArray(a);
+		System.out.println(Arrays.toString(b));
 		
 //		int[][] grid = {{1,1,0,0,1,0}, {1,1,0,0,1,1}, {0,1,1,9,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}};
 //		ShortestPathToFindGold finder = new ShortestPathToFindGold();
@@ -84,13 +84,13 @@ public class Main {
 //		BigInteger num2 = new BigInteger("4321");
 //		System.out.println(mult.karatsubaMult(num1, num2));
 		
-		int[][] arrayA = new int[][] {{3,2,3,2},{7,8,7,8},{3,2,3,2},{7,8,7,8}};
-		int[][] arrayB = new int[][] {{1,3,1,3},{2,6,2,6},{1,3,1,3},{2,6,2,6}};
-		MultiplyMatrix matrixCalc = new MultiplyMatrix();
-		System.out.println(Arrays.deepToString(matrixCalc.multiplyMatrix(arrayA, arrayB)));
-		
-		MultiplyMatrixRecur matrixCalcR = new MultiplyMatrixRecur();
-		System.out.println(Arrays.deepToString(matrixCalcR.multiplyMatrix(arrayA, arrayB)));
+//		int[][] arrayA = new int[][] {{3,2,3,2},{7,8,7,8},{3,2,3,2},{7,8,7,8}};
+//		int[][] arrayB = new int[][] {{1,3,1,3},{2,6,2,6},{1,3,1,3},{2,6,2,6}};
+//		MultiplyMatrix matrixCalc = new MultiplyMatrix();
+//		System.out.println(Arrays.deepToString(matrixCalc.multiplyMatrix(arrayA, arrayB)));
+//		
+//		MultiplyMatrixRecur matrixCalcR = new MultiplyMatrixRecur();
+//		System.out.println(Arrays.deepToString(matrixCalcR.multiplyMatrix(arrayA, arrayB)));
 		
 //		// Testing if array can be modified in the method
 //		int[][] matrix2D = new int[][] {{3,2},{7,8}};
