@@ -1,4 +1,4 @@
-package codingpractice.ctci.arraynstring;
+package codingpractice.ctci.linkedList;
 
 import java.util.Stack;
 
