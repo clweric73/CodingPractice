@@ -22,4 +22,12 @@ public class BNode {
 	public int getValue(){
 		return value;
 	}
+	
+	public void setLeft(BNode node) {
+		left = node;
+	}
+	
+	public void setRight(BNode node) {
+		right = node;
+	}
 }
