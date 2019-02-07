@@ -8,38 +8,24 @@ public class ArrayToTreeConverter {
 		if(array.length <= 0)
 			return null;
 		
-		int midIndex = array.length / 2;
-		
-		BNode root = new BNode(array[midIndex], null, null);
-		// left tree build
-		sortedArrayToBinaryTree(array, 0, midIndex - 1, root);
-		// right tree build
-		sortedArrayToBinaryTree(array, midIndex + 1, array.length - 1, root);
-		
-		return root;
+		return sortedArrayToBinaryTree(array, 0, (array.length - 1));
 	}
 	
-	private void sortedArrayToBinaryTree(int[] array, int startIndex, int endIndex, BNode parentNode) {
+	private BNode sortedArrayToBinaryTree(int[] array, int startIndex, int endIndex) {
 		// base case
 		if(startIndex > endIndex)
-			return;
+			return null;
 		
 		int midIndex = (((endIndex - startIndex) / 2) + startIndex);
-		BNode newChild = new BNode(array[midIndex], null, null);
-		
-		if(array[midIndex] <= parentNode.getValue()) {
-			// add to left child
-			parentNode.setLeft(newChild);
-		} else {
-			// add to right child
-			parentNode.setRight(newChild);
-		}
+		BNode node = new BNode(array[midIndex], null, null);
 		
 		// recursive to left to build left tree
-		sortedArrayToBinaryTree(array, 0, midIndex - 1, newChild);
+		node.setLeft(sortedArrayToBinaryTree(array, startIndex, (midIndex - 1)));
 		
 		// recursive to right to build right tree
-		sortedArrayToBinaryTree(array, midIndex + 1, endIndex, newChild);
+		node.setRight(sortedArrayToBinaryTree(array, (midIndex + 1), endIndex));
+		
+		return node;
 	}
 
 }
