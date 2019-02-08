@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import codingpractice.algorithm.CaesarCipher;
@@ -18,7 +19,13 @@ import codingpractice.coursera.dividenconquer.MultiplyMatrix;
 import codingpractice.coursera.dividenconquer.MultiplyMatrixRecur;
 import codingpractice.coursera.dividenconquer.NumberOfInversionCount;
 import codingpractice.datastructure.BinaryTree;
+import codingpractice.datastructure.Heap;
 import codingpractice.datastructure.Node;
+import codingpractice.datastructure.Queue;
+import codingpractice.datastructure.QueueUsingArray;
+import codingpractice.datastructure.Stack;
+import codingpractice.datastructure.StackUsingArray;
+import codingpractice.datastructure.StackUsingLinkedList;
 import codingpractice.dynamicprogramming.AllPossibleCharactersFromNumber;
 import codingpractice.dynamicprogramming.BiggestSumFromPath;
 import codingpractice.dynamicprogramming.MakeChange;
@@ -111,12 +118,54 @@ public class Main {
 //		System.out.println(Arrays.deepToString(matrix2D));
 //		System.out.println(a);
 		
-		int[] a = readIntegersFromFile("IntegerArray.txt");
-		//Sort s = new QuickSort();
-		NumberOfInversionCount inv = new NumberOfInversionCount();
-		int[] b = inv.countInversion(a);
-		//System.out.println(Arrays.toString(b));
-		System.out.println(inv.getInversionCount());
+//		int[] a = readIntegersFromFile("IntegerArray.txt");
+//		//Sort s = new QuickSort();
+//		NumberOfInversionCount inv = new NumberOfInversionCount();
+//		int[] b = inv.countInversion(a);
+//		//System.out.println(Arrays.toString(b));
+//		System.out.println(inv.getInversionCount());
+		
+//		Stack stack = new StackUsingLinkedList();
+//		stack.push(1);
+//		stack.push(2);
+//		stack.push(3);
+//		stack.push(4);
+//		stack.push(5);
+//		stack.push(6);
+//		stack.push(7);
+//		stack.push(8);
+//		
+//		int size = stack.getSize();
+//		for(int i = 0; i < size; i++){
+//			System.out.println(stack.pop());
+//		}
+//		
+//		Queue q = new QueueUsingArray();
+//		q.enQueue(1);
+//		q.enQueue(2);
+//		q.enQueue(3);
+//		q.enQueue(4);
+//		q.enQueue(5);
+//		q.deQueue();
+//		q.deQueue();
+//		q.deQueue();
+//		q.enQueue(6);
+//		q.enQueue(7);
+//		q.enQueue(8);
+//		q.enQueue(9);
+//		q.enQueue(10);
+//		q.enQueue(11);
+//		
+//		int size = q.getSize();
+//		for(int i = 0; i < size; i++)
+//			System.out.println(q.deQueue());
+		 Heap heap = new Heap();
+		 heap.insert(8);
+		 heap.insert(7);
+		 heap.insert(3);
+		 heap.insert(10);
+		 heap.remove();
+		 
 	}
 
 	private static int[] readIntegersFromFile(String fileName){
