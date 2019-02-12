@@ -31,11 +31,11 @@ public class QuickSort implements Sort {
 		}
 		
 		// point to the last small sub array;
-		//left--;
-		swap(origArray, startIndex, right);
+		left--;
+		swap(origArray, startIndex, left);
 		
-		quickSort(origArray, startIndex, right - 1);
-		quickSort(origArray, left, endIndex);
+		quickSort(origArray, startIndex, left - 1);
+		quickSort(origArray, left + 1, endIndex);
 	}
 	
 	private void swap(int[] array, int firstIndex, int secondIndex){
