@@ -42,6 +42,7 @@ import codingpractice.search.DisplayData;
 import codingpractice.sort.MergeSort;
 import codingpractice.sort.QuickSort;
 import codingpractice.sort.Sort;
+import codingpractice.youtube.PossibleWaysToBuildString;
 
 public class Main {
 
@@ -53,12 +54,12 @@ public class Main {
 //		TraversalTreeStack(root);
 //		MakeChange m = new MakeChange();
 //		System.out.println(m.howManyWaysToMakeChange(new int[] {25, 10, 5, 1}, 27));
-		
-		int[] a = new int[]{3,7,2,1,6,9,3,3,9};
-		Sort s = new QuickSort();
-		//Sort s = new MergeSort();
-		int[] b = s.sortArray(a);
-		System.out.println(Arrays.toString(b));
+//		
+//		int[] a = new int[]{3,7,2,1,6,9,3,3,9};
+//		Sort s = new QuickSort();
+//		//Sort s = new MergeSort();
+//		int[] b = s.sortArray(a);
+//		System.out.println(Arrays.toString(b));
 		
 //		int[][] grid = {{1,1,0,0,1,0}, {1,1,0,0,1,1}, {0,1,1,9,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}};
 //		ShortestPathToFindGold finder = new ShortestPathToFindGold();
@@ -159,13 +160,32 @@ public class Main {
 //		int size = q.getSize();
 //		for(int i = 0; i < size; i++)
 //			System.out.println(q.deQueue());
-		 Heap heap = new Heap();
-		 heap.insert(8);
-		 heap.insert(7);
-		 heap.insert(3);
-		 heap.insert(10);
-		 heap.remove();
-		 
+//		 Heap heap = new Heap();
+//		 heap.insert(8);
+//		 heap.insert(7);
+//		 heap.insert(3);
+//		 heap.insert(10);
+//		 heap.remove();
+//		String msg = "1214";
+//		PossibleWaysToBuildString builder = new PossibleWaysToBuildString();
+//		System.out.println(builder.possibleWays(msg)); 
+		
+//		Permutations perm = new Permutations();
+//		perm.showPermutationNoRepeat(new char[] {'A','B','C'}, 0, "");
+//		String str = "Eric,Chen, ";
+//		String[] items = str.split(",");
+//		System.out.println(items.length);
+//		for(String s : items)
+//			System.out.println(s);
+		
+//		boolean bool = 3 == 3 && 2 == 1;
+//		System.out.println(String.format("%b", bool));
+		System.out.println("Start");
+		List<String> strs = Arrays.asList("");
+		for(String s : strs)
+			System.out.println(String.format("i=%s", s));
+		System.out.println("End");
+		
 	}
 
 	private static int[] readIntegersFromFile(String fileName){
